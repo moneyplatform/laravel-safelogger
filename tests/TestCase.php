@@ -1,36 +1,38 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+declare(strict_types=1);
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+namespace Moneyplatform\SafeLogger\Tests;
+
+use Moneyplatform\SafeLogger\SafeLoggerServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
+    /**
+     * @return void
+     */
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
-    protected function getPackageProviders($app)
+    /**
+     * @param $app
+     * @return string[]
+     */
+    protected function getPackageProviders($app): array
     {
         return [
-            SkeletonServiceProvider::class,
+            SafeLoggerServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    /**
+     * @param $app
+     * @return void
+     */
+    public function getEnvironmentSetUp($app): void
     {
-        config()->set('database.default', 'testing');
-
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        $migration->up();
-        */
     }
 }
