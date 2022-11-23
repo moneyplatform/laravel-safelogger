@@ -1,7 +1,7 @@
 # Logging and logs filtering routines in one place
 
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/moneyplatform/laravel-safelogger/run-tests?label=tests)](https://github.com/moneyplatform/laravel-safelogger/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/moneyplatform/laravel-safelogger/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/moneyplatform/laravel-safelogger/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/moneyplatform/laravel-safelogger/run-tests?label=tests)](https://github.com/moneyplatform/laravel-safelogger/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/moneyplatform/laravel-safelogger/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/moneyplatform/laravel-safelogger/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amaster)
 
 ## Installation
 
