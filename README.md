@@ -14,7 +14,7 @@ composer require moneyplatform/laravel-safelogger
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-safelogger-config"
+php artisan vendor:publish --tag="safelogger-config"
 ```
 
 ## Usage
