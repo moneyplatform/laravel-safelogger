@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Moneyplatform\SafeLogger\Taps;
 
+use Monolog\LogRecord;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -14,7 +15,7 @@ use Psr\Log\LoggerInterface;
 class AddAppName
 {
     /**
-     * @param  LoggerInterface  $logger
+     * @param LoggerInterface $logger
      */
     public function __invoke(LoggerInterface $logger): void
     {
@@ -25,12 +26,12 @@ class AddAppName
     }
 
     /**
-     * @param  array  $record
-     * @return array
+     * @param LogRecord $record
+     * @return LogRecord
      */
-    public function processLogRecord(array $record): array
+    public function processLogRecord(LogRecord $record): LogRecord
     {
-        $record['appname'] = config('app.name');
+        $record->extra['appname'] = config('app.name');
 
         return $record;
     }
