@@ -65,8 +65,6 @@ class LogHelperTest extends TestCase
 
     /**
      * init test
-     *
-     * @return void
      */
     public function setUp(): void
     {

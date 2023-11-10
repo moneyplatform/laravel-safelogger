@@ -14,9 +14,6 @@ use Psr\Log\LoggerInterface;
  */
 class AddAppName
 {
-    /**
-     * @param LoggerInterface $logger
-     */
     public function __invoke(LoggerInterface $logger): void
     {
         //@phpstan-ignore-next-line
@@ -25,10 +22,6 @@ class AddAppName
         }
     }
 
-    /**
-     * @param LogRecord $record
-     * @return LogRecord
-     */
     public function processLogRecord(LogRecord $record): LogRecord
     {
         $record->extra['appname'] = config('app.name');

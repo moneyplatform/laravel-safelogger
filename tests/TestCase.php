@@ -9,16 +9,12 @@ use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
     }
 
     /**
-     * @param $app
      * @return string[]
      */
     protected function getPackageProviders($app): array
@@ -28,10 +24,6 @@ class TestCase extends Orchestra
         ];
     }
 
-    /**
-     * @param $app
-     * @return void
-     */
     public function getEnvironmentSetUp($app): void
     {
     }

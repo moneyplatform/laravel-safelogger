@@ -9,11 +9,6 @@ namespace Moneyplatform\SafeLogger\Tests\PseudoModels;
  */
 class Customer
 {
-    /**
-     * @param  string  $name
-     * @param  string  $phone
-     * @param  int  $weight
-     */
     public function __construct(public string $name, public string $phone, public int $weight)
     {
     }

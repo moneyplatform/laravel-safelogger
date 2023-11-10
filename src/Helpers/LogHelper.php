@@ -15,9 +15,6 @@ class LogHelper
      * Remove hidden fields from the log
      *
      * @param  mixed|null  $object
-     * @param  int  $depth
-     * @param  array  $extraHiddenFields
-     * @return mixed
      */
     public static function filterAndToArray(mixed $object, int $depth = 2, array $extraHiddenFields = []): mixed
     {
@@ -58,10 +55,6 @@ class LogHelper
         return $result;
     }
 
-    /**
-     * @param  mixed  $object
-     * @return mixed
-     */
     private static function objectToArray(mixed $object): mixed
     {
         if (! is_object($object)) {

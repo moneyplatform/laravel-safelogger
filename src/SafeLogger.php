@@ -31,10 +31,6 @@ class SafeLogger
     /* @var string */
     private string $messagePrefix = '';
 
-    /**
-     * @param  string  $name
-     * @param  array  $params
-     */
     public function __call(string $name, array $params = []): void
     {
         $message = $this->getMessageParam($params);
@@ -43,10 +39,6 @@ class SafeLogger
         $this->write($name, $message, $context);
     }
 
-    /**
-     * @param  array  $hiddenFields
-     * @return SafeLogger
-     */
     public function setHiddenFields(array $hiddenFields): self
     {
         $this->hiddenFields = $hiddenFields;
@@ -54,10 +46,6 @@ class SafeLogger
         return $this;
     }
 
-    /**
-     * @param  string  $messagePrefix
-     * @return SafeLogger
-     */
     public function setMessagePrefix(string $messagePrefix): self
     {
         $this->messagePrefix = $messagePrefix;
@@ -65,37 +53,21 @@ class SafeLogger
         return $this;
     }
 
-    /**
-     * @param  int  $contextDepth
-     */
     public function setContextDepth(int $contextDepth): void
     {
         $this->contextDepth = $contextDepth;
     }
 
-    /**
-     * @param  array  $context
-     * @return array
-     */
     protected function hydrateLog(array $context = []): array
     {
         return $context;
     }
 
-    /**
-     * @param  string  $message
-     * @return string
-     */
     protected function addLogPrefix(string $message = ''): string
     {
         return trim($this->messagePrefix.' '.$message);
     }
 
-    /**
-     * @param  string  $level
-     * @param  string  $message
-     * @param  array  $context
-     */
     private function write(string $level, string $message = '', array $context = []): void
     {
         $message = $this->addLogPrefix($message);
@@ -105,10 +77,6 @@ class SafeLogger
         Log::log($level, $message, $context);
     }
 
-    /**
-     * @param  array  $context
-     * @return array
-     */
     private function filterLog(array $context = []): array
     {
         try {
@@ -131,10 +99,6 @@ class SafeLogger
         return $context;
     }
 
-    /**
-     * @param  array  $params
-     * @return string
-     */
     private function getMessageParam(array $params): string
     {
         $message = '';
@@ -147,10 +111,6 @@ class SafeLogger
         return trim($message);
     }
 
-    /**
-     * @param  array  $params
-     * @return array
-     */
     private function getContextParam(array $params): array
     {
         $context = [];
